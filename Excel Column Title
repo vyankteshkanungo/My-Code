@@ -1,0 +1,36 @@
+/**
+ * @input A : Integer
+ * 
+ * @Output string. Make sure the string ends with null character
+ */
+char* convertToTitle(int A) {
+	// SAMPLE CODE
+	
+	  char *result = (char *)malloc(100 * sizeof(char));
+	  char *res = (char *)malloc(100 * sizeof(char));
+	  int i=0,count=0,h;
+       //double d,s=A;
+	  char k;
+	  while(A>0)
+	  {   if(A%26==0) k='Z';
+	      else
+	       {   
+	           k=(char)((int)floor(A%26)+64);}
+	      res[i]=k;
+	      //printf("c:%c\n",k);
+	      A=A/26;i++;
+	      if(k=='Z') A--;
+	      count++;
+	  }
+	  
+	  int j=0;
+	  int l=strlen(res);
+	  for(i=count-1;i>=0;i--)
+	  {
+	      result[j]=res[i];
+	      j++;
+	  }j--;
+	  return result;
+	 
+	 
+}
