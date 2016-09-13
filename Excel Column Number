@@ -1,0 +1,20 @@
+int titleToNumber(char* A) {
+    int l =strlen(A);
+   // printf("l:%d\n",l);
+    int t=0,to=0,j=0,i=0;
+    
+    
+    for(i=l-1;i>=0;i--,j++)
+    {
+        t=A[i]-64;
+        //printf("asc %d\n",t);
+        
+        
+        to=to+t*(int)pow(26,j);
+        //printf("p: %f\n",pow(26,j));
+       // printf("to:%d\n",to);
+        
+    }
+    
+    return to;
+}
