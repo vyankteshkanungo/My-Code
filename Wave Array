@@ -1,0 +1,37 @@
+/**
+ * @input A : Integer array
+ * @input n1 : Integer array's ( A ) length
+ * 
+ * @Output Integer array. You need to malloc memory, and fill the length in len1
+ */
+ //using namespace std;
+ #include<stdlib.h>
+ int compare (const void *a, const void *b)
+{
+    const int *ia = (const int *)a; // casting pointer types 
+    const int *ib = (const int *)b;
+    return *ia  - *ib; 
+}
+int* wave(int* A, int n1, int *len1) {
+    qsort(A, n1, sizeof(A[0]), compare);
+    int i;
+    *len1=n1;
+    int * B =(int *) malloc(*len1*sizeof(int));
+    for(i=0;i<n1;i++)
+    {
+       // printf("sort :%d ",A[i]);
+    }
+    int temp;
+    for(i=0;i<n1-1;i=i+2)
+    {
+        /*temp=A[i];
+        A[i]=A[i+1];
+        A[i+1]=temp;
+        */
+        B[i]=A[i+1];
+        B[i+1]=A[i];
+        //printf("\n%d %d ",A[i],A[i+1]);
+    }
+    if(n1%2==1) B[i]=A[i];
+    return B;
+}
