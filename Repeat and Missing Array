@@ -1,0 +1,28 @@
+int* repeatedNumber(const int* A, int n1, int *length_of_array) {
+	// SAMPLE CODE
+        
+          *length_of_array = 2; // length of result array
+          int *result = (int *) malloc(*length_of_array * sizeof(int));
+          // DO STUFF HERE
+          //int i=0,j=1;
+          //int m,d,dm;
+          long i=0,n=n1,k=0,a=0,b=0,c=0,dm2,m,d,dm;
+          
+          for(i=0;i<n;i++)
+          {
+               k+=(long int)A[i];
+               a+=(long int)pow((long int)A[i],2);
+          }
+          b=n*(n+1)/2;
+          c=n*(n+1)*(2*n+1)/6;
+          //b-k=d-m;
+          dm=b-k;
+          dm2=c-a;
+          d=((dm2/dm) + dm)/2;
+          m=d-dm;
+          result[0]=(int)m;
+          result[1]=(int)d;
+          return result;
+         
+         
+}
