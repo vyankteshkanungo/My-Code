@@ -1,0 +1,16 @@
+#include<string.h>
+void arrange(int* A, int n1) {
+         int i;
+         for ( i=0; i < n1; i++)
+             A[i] += (A[A[i]]%n1)*n1;
+ 
+    // Second Step: Divide all values by n
+    for ( i=0; i<n1; i++)
+        A[i] /= n1;
+        
+            
+        //printf("%d\n",A[A[i]]);
+    
+    
+    
+}
