@@ -1,0 +1,54 @@
+#include<algorithm>
+//#include<iostream>
+#include<string.h>
+#include<stdio.h>
+using namespace std;
+
+int Solution::findRank(string A) {
+    //string my;
+    int min,diff=1,m=1;
+    //cin>>my;
+   // cout<<A;
+    char myArray[A.size()+1];
+    //char myArray2[my.size()+1];//as 1 char space for null is also required
+          strcpy(myArray, A.c_str());
+          //strcpy(myArray2, my.c_str());
+          int n=strlen(myArray);
+          //printf("n %d\n",n);
+          for(int i=0;i<n;i++)
+          {
+              
+          }
+          int count;
+          //sort(myArray,myArray+strlen(myArray));
+          for(int i=0;i<n;i++)
+          {  //printf("here1\n");
+             m=1;
+              min =(int) myArray[i];
+              //printf("min %d\n",min);
+              count=0;
+              for(int j=i+1;j<strlen(myArray);j++)
+              {
+                  if(min>(int)myArray[j]) 
+                   { 
+                       count++;
+                       
+                   }
+              }
+              //printf("cnt %d\n",count);
+              //printf("loop %d\n",(n-(i+1)));
+             // printf("small*f :%d * %d",count,(n-(i+1)));
+              for(int k = 1; k <=(n-(i+1)); k++) {
+               m *= k%1000003;
+               m=m%1000003;
+                }
+             // m=factorial(n-(i+1))%1000003;
+              diff += ((count%1000003)*(m)%1000003);
+              //printf("f %d\n",m);
+              //printf("diff %d\n",diff);
+          }
+          
+          
+        return diff%1000003;         
+          
+}
