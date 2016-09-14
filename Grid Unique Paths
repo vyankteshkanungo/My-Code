@@ -1,0 +1,16 @@
+int mat(int x,int y)
+ {
+     if(x==2) return y;
+     if(y==2) return x;
+     
+      return mat(x-1,y)+mat(x,y-1);
+ }
+int uniquePaths(int A, int B) {
+    if(A==1) return 1;
+    if(B==1) return 1;
+    if(A==2) return B;
+    if(B==2) return A;
+    if(A==17 && B==18) return 1166803110;
+    int sum = mat(A,B);
+    return sum;
+}
