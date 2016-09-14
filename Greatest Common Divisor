@@ -1,0 +1,16 @@
+int gcd(int A, int B) {
+    int a,b,c;
+    //if((A==0 && B==1) || (A==1 && B==0)) return 1;
+    if(A==0) return B;
+    if(B==0) return A;
+    if(A>B) {a=A;b=B;}
+    else {a=B;b=A;}
+    if(a==1||b==1) return 1;
+    while(a%b!=0)
+    {   c=a;
+        a=b;
+        b=c%b;
+       // printf("%d",b);
+    }
+    return b;
+}
