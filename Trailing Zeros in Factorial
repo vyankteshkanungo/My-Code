@@ -1,0 +1,9 @@
+int trailingZeroes(int A) {
+    int k=5,t=0;
+    while(A/k!=0)
+    {
+        t+=A/k;
+        k*=5;
+    }
+    return t;
+}
